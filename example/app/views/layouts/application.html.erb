@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Application</title>
+    <%= render  "layouts/default" %>
+    <%= render  "layouts/shim" %>
+  </head>
+  <body>
+    <%= render  "layouts/header" %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
+</html>
