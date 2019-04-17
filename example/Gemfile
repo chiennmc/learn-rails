@@ -10,8 +10,13 @@ end
 gem 'rails', '~> 5.1.7'
 # Use bootstap-sass
 gem 'bootstrap-sass', '3.3.7'
+# Use will_paginate and bootstrap-will_paginate to pagninaion
+gem 'will_paginate', '3.1.6'
+gem 'bootstrap-will_paginate', '1.0.0'
 # Use bcrypt to secure password
 gem 'bcrypt', '3.1.12'
+# Use faker to create sample user
+gem 'faker', '1.7.3'
 # Use rails-controller-testing' to test
 gem 'rails-controller-testing'
 # Use sqlite3 as the database for Active Record
