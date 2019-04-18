@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.paginate(page: params[:page])
+    # User where to check activated user and insert to routes "index"
+    @users = User.where(activated: true).paginate(page: params[:page])
   end
 
   # GET /users/1
@@ -31,9 +32,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
       if @user.save
-        log_in @user
-        flash[:success] = "Welcome to the Sample App!"
-        redirect_to @user
+        @user.send_activation_email
+        flash[:info] = "Please check your email to activate your account."
+        redirect_to root_url
       else
         render "new"
       end
