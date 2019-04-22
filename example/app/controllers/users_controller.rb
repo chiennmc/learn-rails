@@ -72,15 +72,6 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
-    # Confirms a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_path
-      end
-    end
-
     # Confirm current user
     def correct_user
       @user = User.find(params[:id])
